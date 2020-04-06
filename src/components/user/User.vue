@@ -3,9 +3,9 @@
     <h1>The User Page</h1>
     <button @click="navigateToHome" class="btn btn-primary">Go Home</button>
     <hr />
-    <transition name="slide" mode="out-in">
-      <router-view></router-view>
-    </transition>
+    <!-- <transition name="slide" mode="out-in"> -->
+    <router-view></router-view>
+    <!-- </transition> -->
   </div>
 </template>
 

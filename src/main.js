@@ -11,6 +11,17 @@ Vue.use(VueRouter);
 const router = new VueRouter({
   routes,
   mode: "history",
+  scrollBehavior(to, from, savedPosition) {
+    console.log("hash: ", to);
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      console.log("to.hash: ", to.hash);
+      return { selector: to.hash };
+    }
+    return { x: 0, y: 0 };
+  },
 });
 
 new Vue({
