@@ -12,7 +12,7 @@ export const routes = [
     children: [
       { path: "", component: UserStart },
       { path: ":id", component: UserDetail, props: true },
-      { path: ":id/edit", component: UserEdit },
+      { path: ":id/edit", component: UserEdit, name: "userEdit" },
     ],
   },
 ];
