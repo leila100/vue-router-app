@@ -13,6 +13,11 @@ export default {
       userId: this.$route.params.id,
     };
   },
+  watch: {
+    $route(to) {
+      this.userId = to.params.id;
+    },
+  },
   methods: {
     navigateToHome() {
       this.$router.push("/");
