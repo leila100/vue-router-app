@@ -16,9 +16,16 @@ export default {
         name: "userEdit",
         params: { id: this.id },
         query: { local: "en", q: 100 },
-        hash: "#data",
-      },
+        hash: "#data"
+      }
     };
   },
+  beforeRouteEnter(to, from, next) {
+    const flag = true;
+    console.log("to: ", to);
+    console.log("from: ", from);
+    if (flag) next();
+    else next(false);
+  }
 };
 </script>
