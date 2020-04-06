@@ -12,7 +12,6 @@ const router = new VueRouter({
   routes,
   mode: "history",
   scrollBehavior(to, from, savedPosition) {
-    console.log("hash: ", to);
     if (savedPosition) {
       return savedPosition;
     }
@@ -22,6 +21,11 @@ const router = new VueRouter({
     }
     return { x: 0, y: 0 };
   },
+});
+
+router.beforeEach((to, from, next) => {
+  console.log("Global before each");
+  next();
 });
 
 new Vue({
